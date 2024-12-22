@@ -1,4 +1,4 @@
-function findLinks() {
+const findLinks = () => {
   const comments = document.querySelectorAll(".comment");
   const links = [];
 
@@ -32,9 +32,9 @@ function findLinks() {
     links,
     threadUrl: window.location.href,
   };
-}
+};
 
-async function initializePopup() {
+const initializePopup = async () => {
   try {
     // Cross-browser compatible way to get the active tab
     const tabs = await (
@@ -102,6 +102,6 @@ async function initializePopup() {
       `<div class="no-links">Error: Make sure you're on a Hacker News page</div>`;
     console.error("Error:", error);
   }
-}
+};
 
 document.addEventListener("DOMContentLoaded", initializePopup);
