@@ -1,11 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "HN Link Finder",
+  "name": "HN LinkGrep",
   "version": "1.0",
-  "description": "Finds and extracts links from Hacker News threads",
-  "permissions": ["activeTab", "scripting"],
-  "host_permissions": ["https://news.ycombinator.com/*"],
+  "description": "Find and extract links from Hacker News threads",
+  "icons": {
+    "48": "logo24.png",
+    "96": "logo24.png",
+    "128": "logo24.png"
+  },
   "action": {
-    "default_popup": "popup.html"
-  }
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "logo24.png",
+      "32": "logo24.png",
+      "48": "logo24.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://news.ycombinator.com/*"]
 }
