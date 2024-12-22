@@ -4,6 +4,9 @@ HN threads a gold mines for interesting stuff. I've found numerous interesting s
 
 HN Link Finder allows you to see all the links on a HN page. This gives you a quick glimpse of all the links that were shared. You can even go and check out the original thread where the link was shared.
 
+![preview-image](https://github.com/user-attachments/assets/c1aa5d75-fc75-40c9-a2b0-2c84369c7c4a)
+
+
 ## Installation
 
 At the moment, I haven't released in any browser store. To install the extension, follow the guide below.
