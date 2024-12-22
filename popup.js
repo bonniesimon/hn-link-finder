@@ -3,11 +3,9 @@ function findLinks() {
   const links = [];
 
   comments.forEach((comment) => {
-    // Get the comment ID from the closest containing element with an id
     const commentRow = comment.closest("tr[id]");
     const commentId = commentRow ? commentRow.id : null;
 
-    // Get username and age if available
     const userElement = commentRow?.querySelector(".hnuser");
     const ageElement = commentRow?.querySelector(".age");
 
@@ -38,16 +36,22 @@ function findLinks() {
 
 async function initializePopup() {
   try {
-    const [tab] = await browser.tabs.query({
+    // Cross-browser compatible way to get the active tab
+    const tabs = await (
+      typeof chrome !== "undefined" ? chrome : browser
+    ).tabs.query({
       active: true,
       currentWindow: true,
     });
 
-    const [{ result }] = await browser.scripting.executeScript({
-      target: { tabId: tab.id },
+    // Execute script in the active tab
+    const api = typeof chrome !== "undefined" ? chrome : browser;
+    const results = await api.scripting.executeScript({
+      target: { tabId: tabs[0].id },
       func: findLinks,
     });
 
+    const result = results[0].result;
     const container = document.getElementById("links-container");
     container.innerHTML = "";
 
@@ -78,7 +82,6 @@ async function initializePopup() {
         metadata.textContent = `Posted by ${link.username} ${link.timestamp}`;
       }
 
-      // Create source link only if we have a comment ID
       if (link.commentId) {
         const sourceLink = document.createElement("a");
         sourceLink.href = `${new URL(result.threadUrl).origin}/item?id=${link.commentId}`;
@@ -97,7 +100,7 @@ async function initializePopup() {
     });
   } catch (error) {
     document.getElementById("links-container").innerHTML =
-      `<div class="no-links" data-error="${error}">Error: Make sure you're on a Hacker News page</div>`;
+      `<div class="no-links">Error: Make sure you're on a Hacker News page</div>`;
     console.error("Error:", error);
   }
 }
