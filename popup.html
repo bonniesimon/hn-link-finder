@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <style>
+            body {
+                width: 400px;
+                padding: 10px;
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    sans-serif;
+            }
+            .link-item {
+                margin-bottom: 15px;
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+            }
+            .link-url {
+                color: #2962ff;
+                text-decoration: none;
+                word-break: break-all;
+                display: block;
+                margin-bottom: 5px;
+            }
+            .link-context {
+                color: #666;
+                font-size: 0.9em;
+                margin-top: 5px;
+            }
+            .no-links {
+                color: #666;
+                text-align: center;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="links-container">
+            <div class="no-links">Loading...</div>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>
