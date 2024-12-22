@@ -3,31 +3,50 @@
     <head>
         <meta charset="UTF-8" />
         <style>
+            * {
+                box-sizing: border-box;
+            }
+
             body {
                 width: 400px;
+                margin: 0;
                 padding: 10px;
                 font-family:
                     system-ui,
                     -apple-system,
                     sans-serif;
+                overflow-x: hidden;
             }
+
             .link-item {
                 margin-bottom: 15px;
                 padding: 10px;
                 border-bottom: 1px solid #eee;
+                width: 100%;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                word-break: break-word;
             }
+
             .link-url {
                 color: #2962ff;
                 text-decoration: none;
-                word-break: break-all;
+                word-break: break-word;
                 display: block;
                 margin-bottom: 5px;
+                max-width: 100%;
             }
+
             .link-context {
                 color: #666;
                 font-size: 0.9em;
                 margin-top: 5px;
+                white-space: pre-wrap;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                word-break: break-word;
             }
+
             .source-link {
                 color: #ff6600;
                 font-size: 0.8em;
@@ -35,18 +54,28 @@
                 margin-top: 8px;
                 display: inline-block;
             }
+
             .source-link:hover {
                 text-decoration: underline;
             }
+
             .metadata {
                 margin-top: 8px;
                 font-size: 0.8em;
                 color: #888;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                word-break: break-word;
             }
+
             .no-links {
                 color: #666;
                 text-align: center;
                 padding: 20px;
+            }
+
+            #links-container {
+                width: 100%;
             }
         </style>
     </head>
