@@ -97,7 +97,7 @@ async function initializePopup() {
     });
   } catch (error) {
     document.getElementById("links-container").innerHTML =
-      `<div class="no-links">Error: Make sure you're on a Hacker News page</div>`;
+      `<div class="no-links" data-error="${error}">Error: Make sure you're on a Hacker News page</div>`;
     console.error("Error:", error);
   }
 }
