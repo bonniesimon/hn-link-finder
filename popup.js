@@ -44,7 +44,6 @@ async function initializePopup() {
       currentWindow: true,
     });
 
-    // Execute script in the active tab
     const api = typeof chrome !== "undefined" ? chrome : browser;
     const results = await api.scripting.executeScript({
       target: { tabId: tabs[0].id },
