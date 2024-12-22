@@ -1,3 +1,6 @@
+<a href="https://buymeacoffee.com/bonniesimon" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+
 # HN Link Finder
 
 HN threads are gold mines for interesting stuff. I've found numerous interesting software and articles from HN threads. But when there are 100 comments on a discussion, it becomes extremely hard to parse all that and find stuff.
